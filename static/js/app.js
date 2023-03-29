@@ -32,8 +32,6 @@ function init() {
     }}});
 
 };
-
-
 init();
 // funtion to build demopraphics panel
 function demographicsPanel(id) {
@@ -77,7 +75,9 @@ function demographicsPanel(id) {
             y:otuIds.slice(0,10).map(ids => `OTU ${ids}`).reverse(),
             text: otuLabels.slice(0,10).reverse(),
             type: 'bar',
-            orientation: 'h'
+            orientation: 'h',
+            marker: {
+                color: 'rgb(137,176,159)'}
         }]
         //Apply title to the layout
         var barLayout = {
@@ -96,16 +96,16 @@ function demographicsPanel(id) {
             marker: {
               size: sampleValues,
               color: otuIds,
-              colorscale: 'Earth',
+              colorscale: 'YlGnBu',
             },
-            text: otuLabels
+            text: otuLabels,
           }];
            
           var bubbleLayout = {
             xaxis: { title: 'OTU IDs' },
             showlegend: false,
             height: 500,
-            width: 1000
+            width: 1500
           };
           
           Plotly.newPlot(bubble, bubbleTrace, bubbleLayout);
@@ -142,11 +142,6 @@ function demographicsPanel(id) {
                 font: { color: 'darkblue', family: 'Arial'}}
 
             Plotly.newPlot('gauge', gaugeTrace, gaugeLayout);
-
-
-
-
-        
     });
 }; 
 
