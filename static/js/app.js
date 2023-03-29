@@ -1,6 +1,6 @@
 const url = 'https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json'
 
-// Initialize page with a default id data and visuals
+// initialize page with a default id data and visuals
 function init() {
     d3.json(url).then(data => {
         //select dropdown element
@@ -14,14 +14,14 @@ function init() {
             .text(id)
             .property('value', id));
 
-        // Call functions for default panel and charts
+        // call functions for default panel and charts
         demographicsPanel(IDs[0]);
         charts(IDs[0])
 
-    // When value changes, call getData()    
+    // when value changes, call getData()    
     d3.select("#selDataset").on("change", getData);
 
-    // Function called when dropdown value changes
+    // function called when dropdown value changes
     function getData() {
         var idValue = dropDown.property('value')
         if (idValue == idValue) {
@@ -79,12 +79,13 @@ function demographicsPanel(id) {
             marker: {
                 color: 'rgb(137,176,159)'}
         }]
-        //Apply title to the layout
+        //apply title to the layout
         var barLayout = {
-        title: `Top 10 OTUs Found For Patient: ${id}`
+        title: `Top 10 OTUs Found For Patient: ${id}`,
+        height: 415
         };
 
-        //Render the plot to the div tag with id 'bar'
+        // render the plot to the div tag with id 'bar'
         Plotly.newPlot(bar, barTrace, barLayout);
 
         // build bubble chart
@@ -105,9 +106,10 @@ function demographicsPanel(id) {
             xaxis: { title: 'OTU IDs' },
             showlegend: false,
             height: 500,
-            width: 1500
+            width: 1280
           };
           
+          // render the plot to the div tag with id 'bubble'
           Plotly.newPlot(bubble, bubbleTrace, bubbleLayout);
 
           // build gauge
@@ -131,16 +133,14 @@ function demographicsPanel(id) {
                   { range: [7, 8], color: 'rgb(90,120,100)'},
                   { range: [8, 9], color: 'rgb(69,101,70)'}]
             
-              }
-            }
-          ];
+              }}];
         
             var gaugeLayout = { 
                 width: 600, 
-                height: 400, 
+                height: 415, 
                 margin: { t: 25, r: 10, l: 10, b: 25 },
                 font: { color: 'darkblue', family: 'Arial'}}
-
+            // render the plot to the div tag with id 'gauge'
             Plotly.newPlot('gauge', gaugeTrace, gaugeLayout);
     });
 }; 
