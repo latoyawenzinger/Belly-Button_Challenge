@@ -5,6 +5,7 @@
 In the human belly button, there are microbes that live inside it. In this data, there were some microbial species that were found in more than 70% of people, while other species proved to be relatively rare. This dataset refers to each microbial species as **"Operational Taxonomic Units (OTUs)"**. 
 
 In this interactive dashboard, the user can view the data of individual of their choosing. 
+Click [Here](http://127.0.0.1:5500/index.html) to view the interactive dashboard!
 
 - There is a dropdown element that holds all of the patient IDs in this dataset. The user can pick any ID of their choosing.
 
