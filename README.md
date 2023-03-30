@@ -29,3 +29,9 @@ In this [**INTERACTIVE DASHBOARD**](http://127.0.0.1:5500/index.html), the user 
 - As an added bonus, a gauge will populate showing how many times that specied ID washes their belly button per week.
 
 ![image](https://user-images.githubusercontent.com/115582691/228509799-e77fa3c6-4b51-4210-b6bc-9e914f2852a9.png)
+
+
+**Chart Documentation Provided By**:
+-- https://plotly.com/javascript/bar-charts/
+-- https://plotly.com/javascript/bubble-charts/
+-- https://plotly.com/javascript/gauge-charts/
