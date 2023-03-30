@@ -18,20 +18,9 @@ function init() {
         demographicsPanel(IDs[0]);
         charts(IDs[0])
 
-    // when value changes, call getData()    
-    d3.select("#selDataset").on("change", getData);
+      })
+    };
 
-    // function called when dropdown value changes
-    function getData() {
-        var idValue = dropDown.property('value')
-        if (idValue == idValue) {
-        demographicsPanel(idValue)
-        charts(idValue) 
-
-       
-    }}});
-
-};
 init();
 // funtion to build demopraphics panel
 function demographicsPanel(id) {
@@ -145,8 +134,8 @@ function demographicsPanel(id) {
     });
 }; 
 
-
-
-
-
-    
+// use HTML element onchange to update data based on change event/value in drop down element
+function optionChanged(value) {
+  demographicsPanel(value)
+  charts(value)
+};  
