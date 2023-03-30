@@ -32,6 +32,7 @@ In this [**INTERACTIVE DASHBOARD**](http://127.0.0.1:5500/index.html), the user 
 
 
 **Chart Documentation Provided By**:
+
     - https://plotly.com/javascript/bar-charts/
     - https://plotly.com/javascript/bubble-charts/
     - https://plotly.com/javascript/gauge-charts/
